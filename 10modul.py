@@ -1,3 +1,32 @@
+# определение кол-ва дней необходимых для достижения дистанции h при подъёме на а м/12 час и спускании на b м/12 час при h>b and a>b
+# def get_time(h, a, b):
+#     day = 0
+#
+#     while h >= 0:
+#         h = h - a
+#         day = day + 1
+#
+#         if h <= 0:
+#             return day
+#         else:
+#             h = h + b
+#
+#
+# def main():
+#     h = int(input("Input h: "))
+#     a = int(input("Input a: "))
+#     b = int(input("Input b: "))
+#
+#     day = get_time(h, a, b)
+#
+#     msg = (f"if your snail moves up with {a} m/12 hour and move down with {b} m/12 hours "
+#            f"it will pass distance in {h} m in {day} days")
+#
+#     print(msg)
+#
+#
+# main()
+
 # TASK 1 поиск у заданого времени суммы в часах минутах и секундах
 # SEK_IN_MIN = 60
 # MIN_IN_HOUR = 60
@@ -14,7 +43,7 @@
 # msg = f"Your time has {hour} hours or {minute} minutes or {sec} seconds"
 # print(msg)
 
-# TASK 2 поиск суммы цифер заданого числа
+# TASK 2 поиск суммы цифр заданого числа
 # def sum_finder(a):
 #     su = 0
 #     while a // 10 != 0:
@@ -186,7 +215,7 @@
 #
 #     mark = 0
 #
-#     print("input marks.\nFoe exit input -1\n")
+#     print("input marks.\nFor exit input -1\n")
 #
 #     while mark != -1:
 #         mark = int(input("input :"))
@@ -202,7 +231,7 @@
 #
 # main()
 
-# поиск максимального и минимального содержимого среди элементов контейнера с указанием номера контейнера
+# поиск максимального и минимального содержимого среди элементов контейнера с указанием индекса элемента
 # def get_max(numbers):
 #     max = numbers[0]
 #
@@ -281,7 +310,7 @@
 #     print(msg_arithmetical)
 #     print(msg_geometrical)
 
-# TABLE OF PYTHAGORAS
+#TABLE OF PYTHAGORAS
 # def get_pythagoras_table(number):
 #     table = ""
 #
@@ -403,3 +432,164 @@
 #            else f"Looking for digit {target} does not present in list")
 #
 #     print(msg)
+
+# сортировка ОБМЕНА
+# ls = [65, 38, 12, 257, 129, 35, 39, 5, 2, 67, 27, 39, 89, 23, 7]
+# count = 0
+# for j in range(len(ls) - 1):
+#     flag = True
+#     for i in range(len(ls) - 1 - j):
+#         count = count + 1
+#         if ls[i] > ls[i + 1]:
+#             flag = False
+#             t = ls[i]
+#             ls[i] = ls[i + 1]
+#             ls[i + 1] = t
+#
+#     if flag:
+#         break
+#
+# print(ls)
+# print("count =", count)
+
+# сортировка ВЫБОРА
+# ls = [65, 38, 12, 257, 129, 35, 39, 5, 2, 67, 27, 39, 89, 23, 7]
+# count = 0
+# for j in range(len(ls) - 1):
+#     index_min_value = j
+#
+#     for i in range(j + 1, len(ls)):
+#         count = count + 1
+#         if ls[i] < ls[index_min_value]:
+#             index_min_value = i
+#     t = ls[j]
+#     ls[j] = ls[index_min_value]
+#     ls[index_min_value] = t
+#
+#
+# print(ls)
+# print(count)
+
+# сортировка ВСТАВКИ
+# ls = [65, 38, 12, 257, 129, 35, 39, 5, 2, 67, 27, 39, 89, 23, 7]
+# count = 0
+# for i in range(1, len(ls)):
+#     item = ls[i]
+#     j = i - 1
+#
+#     while item < ls[j] and j >= 0:
+#         count = count + 1
+#         ls[j + 1] = ls[j]
+#         j = j - 1
+#     ls[j+1] = item
+#
+# print(ls)
+# print(count)
+
+# сортировка встроенным оператором PYCharm
+# ls = [65, 38, 12, 257, 129, 35, 39, 5, 2, 67, 27, 39, 89, 23, 7]
+# ls.sort(reverse=True)
+# print(ls)
+#
+# ls.sort()
+# print(ls)
+
+# проверка полиндрома
+# def user_input():
+#     num = list(input("Please enter a number for palindrome check: "))
+#     return num
+#
+#
+# def check_palindrome(number):
+#     number_test = number[::-1]
+#
+#     return number == number_test
+#
+#
+# def check_palindrome(num):
+#     if isinstance(num, bool) or not isinstance(num, list):
+#         return -1
+#
+#     num_copy = 0;
+#
+#     while num > 0:
+#         num_copy *= 10
+#         num_copy += num % 10
+#         num //= 10
+#
+#     return num == num_copy
+#
+#
+# def user_output(result):
+#     msg = f"The number you've entered is {result}"
+#     return msg
+#
+#
+# def main():
+#     num = user_input()
+#     result = check_palindrome(num)
+#     msg = user_output(result)
+#     print(msg)
+#
+#
+# main()
+#
+#
+# def palindrom(number):
+#     if number <= 0:
+#         return -1
+#     ls = []
+#     while number > 0:
+#         last_digit = number % 10
+#         ls.append(last_digit)
+#         number = number // 10
+#
+#     while len(ls) != 0:
+#         if ls[0] != ls[len(ls) - 1]:
+#             return False
+#         ls = ls[1:len(ls) - 1]
+#
+#     return True
+#
+#
+# def main():
+#     number = int(input("Input your number: "))
+#
+#     result = palindrom(number)
+#
+#     msg = (f"Enter a natural number." if result == -1
+#            else "Your number is a palindrome." if result
+#     else f"Your number is not a palindrome.")
+#
+#     print(msg)
+#
+#
+# main()
+
+# поиск мин и макс количества букв в тексте
+# import string
+# str = """This year."""
+#
+# d = {}
+# alfabet = string.ascii_lowercase
+# s = str.lower()
+#
+# for ch in alfabet:
+#     d[ch] = s.count(ch)
+#
+# # for key, value in d.items():
+# #     print(key, " - ", value)
+#
+# max_key = "a"
+# min_key = "a"
+#
+# for key in d:
+#     if d[key] > d[max_key]:
+#         max_key = key
+#
+#     if d[key] < d[min_key]:
+#         min_key = key
+#
+# print(max_key, " - ", d[max_key])
+# print(min_key, " - ", d[min_key])
+
